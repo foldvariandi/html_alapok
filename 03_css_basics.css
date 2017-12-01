@@ -1,4 +1,4 @@
-/ *csslint order-alphabetical: false */
+/*csslint order-alphabetical: false */
 
 /*CSSLint */
 
@@ -7,7 +7,8 @@
     background-color: aqua;
     
 }
-.menupont {
+/*ez a fo-menu a classon belüli menüpont class-okat választja ki */
+.fo-menu .menupont {
     height: 40px;
     /* körbe mindenhol 10px a margin */
     /* margin: 10px; */
@@ -22,6 +23,10 @@
     
     background-color: blue;
     color: white;
+    /*ez a css property megváltoztatja a html elem alapértelmezett működését, jelen esetben */
+    /*egy lock szintű elem (div)-ből inline elem-et csinál, de a block tulajdonságait is megőrzi */
+    /*azaz, reagálni fog az elem a width, és height paraméterekre */
+    /* read more: http://www.w3schools.com/css/css_inline-block.asp */
     display: inline-block;
     
     /* a következő három sort rövidítve is lehet írni*/
@@ -33,8 +38,26 @@
     /* az előző három sor rövidítve igy néz ki: */
     padding: 22px 10px 0 10px; /*felül, jobbra, alul, balra */
 }
+.al-menu {
+    margin-top: 20px;
+    /*jobbra rendezzük az almenüt */
+    float: right;
+    
+    
+} 
+.al-menu .menupont {
+    margin-left: 10px;
+    display: inline-block;
+    text-decoration: underline        
+}
 
+/* ha a menüpont fölé visszük az egeret, akkor bekékül az adott menüpont */
+/*touch-screen-en NINCS hover!!*/
+.al-menu .menupont:hover {
+    color: blue;
+}
 .tartalom {
+    margin-top: 40px;
     background-color: lightgray;
     height: 1000px; /* ez csak azért kell hogy a scrollbar megjelenjen */
     /* bizonyos css property-k-ket nem ajánlott használni, mert nem minden böngésző ismeri. Ezt a caniuse.com weboldalon ellenőrizhetjük */
@@ -43,4 +66,3 @@
     /*zoom: 0.1; */
     
 }
-
